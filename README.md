@@ -5,67 +5,107 @@
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
-## Objective
+# Análise Bioestatística da Retinopatia Diabética
 
-This repository contains a practical study of public datasets related to **Diabetic Retinopathy (DR)**, with emphasis on dataset selection, data preprocessing, exploratory analysis, and statistical methods applied to ophthalmological data.
+Seleção de datasets e pré-processamento de dados para a disciplina de Projeto em Computação.
 
-## Project Structure
+## Objetivo
 
-The project is organized into two main notebooks:
+Este repositório apresenta um estudo prático de datasets públicos relacionados à **Retinopatia Diabética (RD)**, com foco na seleção de dados, pré-processamento, análise exploratória e aplicação de métodos estatísticos em dados oftalmológicos.
+
+O projeto foi desenvolvido no contexto da disciplina de **Projeto em Computação**.
+
+## Estrutura conceitual
+
+O projeto foi organizado em duas etapas principais:
+
+```text
+00_dataset_comparison.ipynb
+
+Objetivo da atividade
+        ↓
+Objetivo do notebook
+        ↓
+Contextualização
+        ↓
+Escolha do problema
+        ↓
+Busca dos datasets candidatos
+        ↓
+Critérios de seleção
+        ↓
+Comparação dos datasets
+        ↓
+Seleção do dataset
+        ↓
+01_diabetic_retinopathy_analysis.ipynb
+        ↓
+Resposta da atividade
+```
+
+O primeiro notebook realiza uma etapa complementar de investigação e seleção. A partir dessa comparação, um único dataset é selecionado para a execução da análise estatística solicitada na atividade.
+
+## Estrutura do projeto
+
+O projeto é organizado em dois notebooks principais.
 
 ### `00_dataset_comparison.ipynb`
 
-A complementary notebook dedicated to the search and comparison of public datasets related to Diabetic Retinopathy.
+Notebook complementar destinado à **busca, triagem e comparação de datasets públicos** relacionados à Retinopatia Diabética.
 
-The datasets are evaluated according to criteria such as:
+Os datasets são avaliados considerando critérios como:
 
-* data availability and format;
-* number and diversity of variables;
-* clinical and demographic information;
-* sample size;
-* disease outcome/classification;
-* documentation and data quality;
-* accessibility;
-* suitability for statistical analysis.
+* disponibilidade e formato dos dados;
+* quantidade e diversidade de variáveis;
+* relevância das variáveis para análise estatística;
+* presença de variáveis clínicas e demográficas;
+* tamanho e unidade de análise da amostra;
+* natureza e definição do desfecho;
+* qualidade e documentação da fonte;
+* acessibilidade;
+* possibilidade de reprodução;
+* adequação às técnicas estatísticas propostas na atividade.
 
-The comparison supports the selection of the dataset used in the main analysis.
+O objetivo deste notebook é identificar **qual estrutura de dados apresenta maior adequação às análises estatísticas exigidas pela atividade** e, a partir disso, fundamentar a seleção de um único dataset.
 
 ### `01_diabetic_retinopathy_analysis.ipynb`
 
-This notebook contains the **main analysis developed for the Computing Project course activity**.
+Notebook correspondente à **análise principal desenvolvida para responder à atividade da disciplina**.
 
-It follows the requirements proposed in the activity and includes:
+A análise é realizada utilizando um único dataset selecionado na etapa anterior e contempla:
 
-* dataset description;
-* data cleaning and preprocessing;
-* missing value analysis;
-* duplicate and inconsistency checks;
-* descriptive statistics;
-* data visualization;
-* correlation analysis;
-* comparison between groups;
-* statistical hypothesis testing;
-* interpretation of results;
-* limitations;
-* conclusion.
+* descrição do dataset;
+* limpeza e preparação dos dados;
+* análise de valores ausentes;
+* verificação de duplicidades;
+* identificação de inconsistências;
+* padronização dos tipos de dados;
+* estatística descritiva;
+* visualização dos dados;
+* análise de correlação;
+* comparação entre grupos;
+* testes estatísticos;
+* interpretação dos resultados;
+* limitações;
+* conclusão.
 
-## Data Sources
+## Fontes dos dados
 
-The datasets investigated during the selection stage are obtained from public repositories, including:
+Os datasets investigados durante a etapa de seleção são provenientes de repositórios públicos, incluindo:
 
 * [Kaggle](https://www.kaggle.com/)
 * [UCI Machine Learning Repository](https://archive.ics.uci.edu/)
 * [PhysioNet](https://physionet.org/)
 
-The original source of each dataset is identified and referenced in the respective notebook.
+A fonte original e as referências de cada dataset são identificadas nos respectivos notebooks.
 
-## Reproducibility
+## Reprodutibilidade
 
-The analyses are developed in Python using Jupyter Notebook/Google Colab and statistical and data visualization libraries.
+As análises são desenvolvidas em Python, utilizando Jupyter Notebook/Google Colab e bibliotecas para manipulação, análise estatística e visualização de dados.
 
-All relevant preprocessing and analytical decisions are documented in the notebooks to support reproducibility.
+As principais decisões de pré-processamento e análise são documentadas nos notebooks, permitindo a reprodução dos procedimentos realizados.
 
-## Repository Structure
+## Estrutura do repositório
 
 ```text
 .
@@ -74,8 +114,8 @@ All relevant preprocessing and analytical decisions are documented in the notebo
 └── 01_diabetic_retinopathy_analysis.ipynb
 ```
 
-## Note
+## Observação
 
-The `00_dataset_comparison.ipynb` notebook is a complementary dataset selection study and is not intended to replace the course activity itself.
+O `00_dataset_comparison.ipynb` possui caráter **complementar**, sendo utilizado para investigar e comparar datasets candidatos e fundamentar a seleção da base de dados.
 
-The `01_diabetic_retinopathy_analysis.ipynb` notebook represents the main analysis submitted for the Computing Project course, using a single dataset selected based on the criteria established during the comparison stage.
+O `01_diabetic_retinopathy_analysis.ipynb` constitui a **análise principal desenvolvida para atender aos requisitos da atividade da disciplina de Projeto em Computação**, utilizando um único dataset selecionado com base nos critérios estabelecidos na etapa de comparação.
