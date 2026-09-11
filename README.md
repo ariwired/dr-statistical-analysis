@@ -1,9 +1,10 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
 ![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
-![Scikit-Learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-%2311557C.svg?style=for-the-badge&logo=Matplotlib&logoColor=white)
+![SciPy](https://img.shields.io/badge/SciPy-%230C55A5.svg?style=for-the-badge&logo=scipy&logoColor=white)
+![Statsmodels](https://img.shields.io/badge/Statsmodels-4051B5?style=for-the-badge)
 
 # Análise Bioestatística da Retinopatia Diabética
 
@@ -22,25 +23,25 @@ O projeto foi organizado em duas etapas principais:
 ```text
 00_dataset_comparison.ipynb
 
-Objetivo da atividade
+Objetivo e princípio de comparação
         ↓
-Objetivo do notebook
+Datasets candidatos e fontes
         ↓
-Contextualização
+Carregamento e padronização
         ↓
-Escolha do problema
+Definição semântica das variáveis
         ↓
-Busca dos datasets candidatos
+Inspeção estatística padronizada
         ↓
-Critérios de seleção
+Compatibilidade com os requisitos
         ↓
-Comparação dos datasets
+Elegibilidade e critérios de desempate
         ↓
 Seleção do dataset
         ↓
 01_diabetic_retinopathy_analysis.ipynb
         ↓
-Resposta da atividade
+Análise bioestatística principal
 ```
 
 O primeiro notebook realiza uma etapa complementar de investigação e seleção. A partir dessa comparação, um único dataset é selecionado para a execução da análise estatística solicitada na atividade.
@@ -65,6 +66,8 @@ Os datasets são avaliados considerando critérios como:
 * acessibilidade;
 * possibilidade de reprodução;
 * adequação às técnicas estatísticas propostas na atividade.
+
+A adequação estatística é comparada por meio de critérios objetivos relacionados aos requisitos da atividade, como disponibilidade de variáveis numéricas, categóricas, clínicas e demográficas, possibilidade de correlação e comparação entre grupos e presença de desfecho relacionado à RD. Aspectos como proveniência, documentação e confiabilidade da fonte são considerados separadamente na elegibilidade dos datasets para a seleção final.
 
 O objetivo deste notebook é identificar **qual estrutura de dados apresenta maior adequação às análises estatísticas exigidas pela atividade** e, a partir disso, fundamentar a seleção de um único dataset.
 
