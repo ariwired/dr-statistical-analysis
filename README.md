@@ -259,6 +259,7 @@ Uma execução completa do notebook permite reproduzir as tabelas, gráficos e r
 ```text
 .
 ├── README.md
+├── requirements.txt
 ├── 00_dataset_comparison.ipynb
 └── 01_diabetic_retinopathy_analysis.ipynb
 ```
