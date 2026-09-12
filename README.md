@@ -16,6 +16,12 @@ Este repositório apresenta um estudo prático de dados públicos relacionados �
 
 O trabalho foi dividido em duas etapas. A primeira compara diferentes datasets públicos e identifica qual estrutura de dados é mais adequada às análises propostas na atividade. A segunda realiza a análise bioestatística do dataset selecionado, incluindo pré-processamento, análise exploratória, visualizações, correlação, comparação entre grupos e interpretação dos resultados.
 
+## Relatório
+
+O relatório final da análise está disponível em:
+
+- [Relatório em PDF](docs/report.pdf)
+
 ## Estrutura conceitual
 
 O projeto foi organizado em duas etapas principais:
@@ -91,9 +97,12 @@ Entre os datasets investigados estão:
 - BRSET;
 - Diabetic Retinopathy Debrecen;
 - ODIR-5K;
-- Diabetic Retinopathy Study (DRS).
+- Diabetic Retinopathy Study (DRS);
+- CMRDD.
 
-A comparação resultou na seleção do mBRSET para a análise principal, por apresentar dados tabulares clínicos e demográficos estruturados, além da classificação da Retinopatia Diabética segundo a escala ICDR.
+Embora o CMRDD apresentasse estrutura compatível com os requisitos estatísticos da atividade, ele não foi considerado elegível para a seleção final devido à ausência de documentação científica independente e proveniência institucional verificável.
+
+A comparação resultou na seleção do mBRSET para a análise principal. mBRSET e BRSET atenderam aos seis critérios de compatibilidade estatística considerados, e o mBRSET foi selecionado no desempate por apresentar maior disponibilidade de pares numéricos para correlação, variáveis de agrupamento e variáveis clínicas estruturadas.
 
 ### `01_diabetic_retinopathy_analysis.ipynb`
 
@@ -114,7 +123,7 @@ A construção dessa tabela considera:
 
 - mediana dos valores disponíveis para características numéricas do paciente;
 - moda para características categóricas;
-- maior estágio ICDR observado entre as imagens disponíveis para representar o estágio analisado do paciente;
+- maior estágio ICDR observado entre as imagens com classificação disponível para representar o estágio analisado do paciente;
 - presença de edema quando o achado está registrado em pelo menos uma imagem;
 - manutenção da quantidade de imagens e rótulos disponíveis para acompanhamento da cobertura dos dados.
 
@@ -173,7 +182,7 @@ Como a hipótese de normalidade foi rejeitada, a análise é realizada por meio 
 O resultado encontrado foi:
 
 - ρ = 0.220;
-- p < 0.05;
+- p = 2.24 × 10⁻¹⁵;
 - IC95% bootstrap aproximadamente entre 0.165 e 0.273.
 
 Os resultados indicam uma associação positiva de baixa magnitude entre idade e duração da diabetes.
@@ -185,9 +194,9 @@ A duração da diabetes é comparada entre os cinco estágios ICDR.
 Após a avaliação dos pressupostos, é aplicado o teste de Kruskal-Wallis, com resultado:
 
 - H = 167.699;
-- p < 0.05.
+- p = 3.26 × 10⁻³⁵.
 
-O resultado indica diferença na distribuição da duração da diabetes entre pelo menos dois estágios.
+O resultado fornece evidência de que a distribuição da duração da diabetes não é a mesma em todos os estágios ICDR.
 
 Como o teste global rejeitou a hipótese nula, são realizadas comparações par a par pelo teste de Mann-Whitney, com correção de Holm para múltiplas comparações.
 
@@ -236,17 +245,62 @@ Os datasets investigados durante a etapa de seleção são provenientes de repos
 
 A fonte original, a documentação e as referências de cada dataset são identificadas nos respectivos notebooks.
 
+## Ambiente de execução
+
+Para executar o projeto localmente, recomenda-se criar um ambiente virtual Python e instalar as dependências listadas em `requirements.txt`.
+
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/ariwired/dr-statistical-analysis.git
+cd dr-statistical-analysis
+```
+
+### 2. Criar o ambiente virtual
+
+```bash
+python -m venv .venv
+```
+
+#### No Linux/macOS:
+
+```bash
+source .venv/bin/activate
+```
+
+#### Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+### 3. Instalar as dependências
+
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### 4. Executar os notebooks
+
+Com o ambiente ativado, inicie o Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+
+Os notebooks devem ser executados na seguinte ordem:
+
+1. `00_dataset_comparison.ipynb`: comparação e seleção do dataset;
+2. `01_diabetic_retinopathy_analysis.ipynb`: pré-processamento e análise bioestatística do mBRSET.
+
+O primeiro notebook é complementar e não é necessário para a execução da análise principal.
+
 ## Reprodutibilidade
 
 As análises são desenvolvidas em Python com Jupyter Notebook/Google Colab.
 
-As principais bibliotecas empregadas são:
-
-- Pandas;
-- NumPy;
-- Matplotlib;
-- SciPy;
-- Statsmodels.
+As principais bibliotecas empregadas são: Pandas, NumPy, Matplotlib, SciPy e Statsmodels.
 
 As decisões de limpeza, transformação e análise estatística são documentadas ao longo dos notebooks.
 
@@ -258,6 +312,8 @@ Uma execução completa do notebook permite reproduzir as tabelas, gráficos e r
 
 ```text
 .
+├── docs/
+│   └── report.pdf
 ├── README.md
 ├── requirements.txt
 ├── 00_dataset_comparison.ipynb
