@@ -1,2 +1,10 @@
-.venv
-/venv
+venv/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.env
+data/raw/
+results/
+*.npy
+*.joblib
+*.pt
